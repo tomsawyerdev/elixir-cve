@@ -1,0 +1,30 @@
+<div class="m-20" >
+
+<a href="/upload" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Upload Cve</a>
+
+
+
+
+<h1 class="m-5">CVE List:</h1>
+
+<table  class="border-separate border-spacing-5 border border-gray-400 dark:border-gray-500">
+  <tr>
+    <th class="border-b border-gray-700">Id</th>
+    <th class="border-b border-gray-700">Published</th>
+    <th class="border-b border-gray-700">Export</th>
+  </tr>
+  <%= for e <- @items do %>
+    <tr>
+      <td >{e.cveid}</td>
+      <td>{e.published}</td>
+      <td><a href={"/api/export/#{e.cveid}"}>   
+        <svg width="15" height="10" viewBox="0 0 15 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 1.18254L5.08646 -2.53185e-07L7.5 2.70635L9.91354 -4.65162e-08L11 1.18254L7.5 5L4 1.18254Z" fill="black"></path>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M1.76471 8.4124V4.58887H1V9.1771H14V4.58887H13.2353V8.4124H1.76471Z" fill="black" stroke="black"></path>
+        </svg>
+        </a></td>
+    </tr>
+  <% end %>
+</table>
+
+</div>
