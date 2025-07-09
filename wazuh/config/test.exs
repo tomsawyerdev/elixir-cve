@@ -5,11 +5,13 @@ import Config
 # The MIX_TEST_PARTITION environment variable can be used
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
+# database: "wazuh_test#{System.get_env("MIX_TEST_PARTITION")}",
 config :wazuh, Wazuh.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "webuser",
+  password: "webpassword",
   hostname: "localhost",
-  database: "wazuh_test#{System.get_env("MIX_TEST_PARTITION")}",
+  database: "cve_db",
+  port: 6432,
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: System.schedulers_online() * 2
 

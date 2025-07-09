@@ -29,6 +29,10 @@ Acceder:
 
 ``` http://localhost:4000/```
 
+3. Correr Test
+
+```mix test```
+
 
 # Probar la Api
 
